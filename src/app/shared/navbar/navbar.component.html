@@ -1,0 +1,18 @@
+<div class="parent-nav" *ngIf="isMenu"> <!-- if user in login page hide navbar -->
+  <nav class="nav">
+    <button class="btn-nav" routerLink="/"><h4>Angular Basic</h4></button>
+
+    <ul class="child-nav2">
+      <app-button [route]="'profile'" [btn]="'Profile'"></app-button>
+      <app-button [route]="'started'" [btn]="'Started'"></app-button>
+      <app-button [route]="'about'" [btn]="'About'"></app-button>
+      <button (click)="logout()" class="btn-nav" routerLink="/">
+        <h4>{{ user && user !== null ? "Logout" : "Login" }}</h4>
+      </button>
+      <div>
+        <h2>{{ user && user !== null ?  user : "" }}</h2>
+      </div>
+    </ul>
+  </nav>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,58 @@
+<h1>post page: {{ params }}</h1>
+<br />
+<button
+  class="btn-submit"
+  [routerLink]="['/started']"
+  routerLinkActive="router-link-active"
+>
+  Back
+</button>
+<br />
+
+<form class="parent-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <input
+      type="text"
+      placeholder="title"
+      name="title"
+      formControlName="title"
+    />
+  </div>
+  <div>
+    <input
+      type="text"
+      placeholder="description"
+      name="description"
+      formControlName="description"
+    />
+  </div>
+  <div>
+    <input
+      type="number"
+      placeholder="userId"
+      name="userId"
+      formControlName="userId"
+    />
+  </div>
+  <button class="btn-submit" [disabled]="form.invalid">
+    {{ this.form.value.id !== this.id ? "Add" : "Update" }}
+  </button>
+</form>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>userId</th>
+    <th>title</th>
+    <th>action</th>
+  </tr>
+  <tr *ngFor="let item of getData; let id = index">
+    <td>{{ item.id }}</td>
+    <td>{{ item.userId }}</td>
+    <td>{{ item.title }}</td>
+    <td>
+      <button class="btn-edit" (click)="onEdit(item)">Edit</button>
+      <button class="btn-delete" (click)="onDelete(item.id)">Delete</button>
+    </td>
+  </tr>
+</table>

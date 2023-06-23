@@ -1,0 +1,10 @@
+<div *ngIf="isLoading">Loading...</div>
+<div class="card">
+  <div *ngFor="let item of data">
+    <app-card
+      [title]="item.title"
+      [description]="item.description"
+      [id]="item.userId"
+    ></app-card>
+  </div>
+</div>

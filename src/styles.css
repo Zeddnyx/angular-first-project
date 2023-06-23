@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* base styles */
+
+table {
+  @apply w-full table-fixed
+}
+tr {
+  @apply border p-2 w-full flex gap-20
+}
+
+input {
+  @apply border p-2
+}
+
+
+
+/* nav*/
+.btn-nav {
+  @apply bg-transparent border-none outline-none text-white font-bold py-2 px-4 rounded
+}
+
+.active-route {
+  @apply text-white border-b-2 border-blue-500
+}
+
+/* card */
+.card {
+  @apply border p-2 w-full grid grid-cols-2 gap-10
+}
+.card-item {
+  @apply grid grid-rows-2 w-full
+}
+.link {
+  @apply text-blue-500
+}
+
+/* Form single post*/
+.parent-form {
+  @apply w-60 grid gap-2 m-5
+}
+.btn-submit {
+  @apply bg-blue-400 border-none outline-none text-white font-bold py-2 px-4 rounded
+}
+.btn-delete {
+  @apply bg-red-400 border-none outline-none text-white font-bold py-2 px-4 rounded
+}
+.btn-edit {
+  @apply bg-yellow-400 border-none outline-none text-white font-bold py-2 px-4 rounded
+}
